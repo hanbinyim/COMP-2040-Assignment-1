@@ -8,3 +8,5 @@ def read_file(filename= "input.txt"):
 def get_words(text):
     return re.findall(r"[a-zA-Z]+", text.lower())
 
+def word_count(words):
+    return Counter(words)
