@@ -1,0 +1,6 @@
+Word count: 270
+Unique words: 149
+Characters (with spaces): 1468
+Characters (no spaces): 1206
+Average word length: 4.3
+Most common word(s): the (14)
