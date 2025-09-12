@@ -33,7 +33,7 @@ def most_common_words(words):
     most_common = sorted([word for word, f in word_counter.items() if f == max_freq])
     return most_common, max_freq
 
-def write_output(stats, filename="output.txt"):
+def output(stats, filename="output.txt"):
     lines = [
         f"Word count: {stats['word_count']}",
         f"Unique words: {stats['unique_words']}",
@@ -43,3 +43,14 @@ def write_output(stats, filename="output.txt"):
         f"Most common word(s): {', '.join(stats['most_common_words'])} ({stats['most_common_freq']})"
 
     ]
+
+# Output to Conosole and output.txt file
+     # Console
+    for line in lines:
+        print(line)
+
+    # File
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+
