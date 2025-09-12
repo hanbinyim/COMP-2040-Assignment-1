@@ -33,6 +33,13 @@ def most_common_words(words):
     most_common = sorted([word for word, f in word_counter.items() if f == max_freq])
     return most_common, max_freq
 
+def write_output(stats, filename="output.txt"):
+    lines = [
+        f"Word count: {stats['word_count']}",
+        f"Unique words: {stats['unique_words']}",
+        f"Characters (with spaces): {stats['chars_with_spaces']}",
+        f"Characters (no spaces): {stats['chars_no_spaces']}",
+        f"Average word length: {stats['avg_word_length']:.1f}",
+        f"Most common word(s): {', '.join(stats['most_common_words'])} ({stats['most_common_freq']})"
 
-
-    
+    ]
