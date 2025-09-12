@@ -25,6 +25,13 @@ def average_word_length(words):
     total_chars = sum(len(word) for word in words)
     return total_chars / len(words)
 
+def most_common_words(words):
+    if not words:
+        return [], 0
+    word_counter = Counter(words)
+    max_count = max(word_counter.values())
+    
+
 
 
     
