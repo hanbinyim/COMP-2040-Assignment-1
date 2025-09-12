@@ -1,30 +1,40 @@
+# Assignment 1 - Text Analysis
+
 import re
 from collections import Counter
 
+# Reading Input file
 def read_file(filename= "input.txt"):
     with open(filename, 'r') as file:
         return file.read()
 
+# Splitting non-letter char
+# Converting to Lowrecase
 def get_words(text):
     return re.findall(r"[a-zA-Z]+", text.lower())
 
+# Total number of words
 def word_count(words):
     return len(words)
 
+# Number of unique words
 def unique_word_count(words):
     return len(set(words))
 
+# Counting characters with and without spaces
 def char_counts(text):
     with_spaces = len(text)
     no_spaces = len(re.sub(r'\s+', '', text))
     return with_spaces, no_spaces
-                    
+
+  # Average word length float with 1 decimal                 
 def average_word_length(words):        
     if not words:
-        return 0
+        return 0.0
     total_chars = sum(len(word) for word in words)
     return total_chars / len(words)
 
+# Most common words and their frequency
 def most_common_words(words):
     if not words:
         return [], 0
@@ -33,6 +43,7 @@ def most_common_words(words):
     most_common = sorted([word for word, f in word_counter.items() if f == max_freq])
     return most_common, max_freq
 
+# Output creates and results to output.txt
 def output(stats, filename="output.txt"):
     lines = [
         f"Word count: {stats['word_count']}",
@@ -43,16 +54,15 @@ def output(stats, filename="output.txt"):
         f"Most common word(s): {', '.join(stats['most_common_words'])} ({stats['most_common_freq']})"
 
     ]
-
-# Output to Conosole and output.txt file
-     # Console
+# Console
     for line in lines:
         print(line)
 
-    # File
+# File
     with open(filename, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
+# Runnung all functions
 def main():
     text = read_file()
     words = get_words(text)
@@ -63,6 +73,7 @@ def main():
     avg_len = average_word_length(words)
     common_words, freq = most_common_words(words)
 
+# Stats dictionary
     stats = {
         "word_count": wc,
         "unique_words": uwc,
