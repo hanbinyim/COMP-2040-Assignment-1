@@ -1,4 +1,4 @@
-# Assignment 1 - Text Analysis
+# Assignment 1 - Text Stats Project
 
 import re
 from collections import Counter
@@ -27,7 +27,7 @@ def char_counts(text):
     no_spaces = len(re.sub(r'\s+', '', text))
     return with_spaces, no_spaces
 
-  # Average word length float with 1 decimal                 
+# Average word length float with 1 decimal                 
 def average_word_length(words):        
     if not words:
         return 0.0
