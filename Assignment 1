@@ -29,8 +29,9 @@ def most_common_words(words):
     if not words:
         return [], 0
     word_counter = Counter(words)
-    max_count = max(word_counter.values())
-    
+    max_freq = max(word_counter.values())
+    most_common = sorted([word for word, f in word_counter.items() if f == max_freq])
+    return most_common, max_freq
 
 
 
