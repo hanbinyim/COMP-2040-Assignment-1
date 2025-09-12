@@ -22,6 +22,7 @@ def char_counts(text):
 def average_word_length(words):        
     if not words:
         return 0
+    total_chars = sum(len(word) for word in words)
     return total_chars / len(words)
 
 
