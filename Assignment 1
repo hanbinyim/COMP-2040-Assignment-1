@@ -19,3 +19,11 @@ def char_counts(text):
     no_spaces = len(re.sub(r'\s+', '', text))
     return with_spaces, no_spaces
                     
+def average_word_length(words):        
+    if not words:
+        return 0
+    return total_chars / len(words)
+
+
+
+    
